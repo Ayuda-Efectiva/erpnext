@@ -550,8 +550,8 @@ def get_prescribed_therapies(patient):
 def update_appointment_status():
 	# update the status of appointments daily
 	appointments = frappe.get_all('Patient Appointment', {
-		'status': ('not in', ['Closed', 'Cancelled'])
-	}, as_dict=1)
+		'status': ('not in', ['Closed', 'Cancelled'])})
+	# DFP fix as_dict not allowed in "get_all"
 
 	for appointment in appointments:
 		frappe.get_doc('Patient Appointment', appointment.name).set_status()
