@@ -57,7 +57,7 @@ def update_youtube_data():
 	# Called every 30 minutes via hooks
 	enable_youtube_tracking, frequency = frappe.db.get_value("Video Settings", "Video Settings", ["enable_youtube_tracking", "frequency"])
 
-	if not enable_youtube_tracking:
+	if not int(enable_youtube_tracking): # DFP fix to cron executed when enabled == '0'
 		return
 
 	frequency = get_frequency(frequency)

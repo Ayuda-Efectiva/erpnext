@@ -157,7 +157,8 @@ def send_daily_feedback_reminder():
 	reminder_settings = frappe.db.get_value('HR Settings', 'HR Settings',
 		['send_interview_feedback_reminder', 'feedback_reminder_notification_template'], as_dict=True)
 
-	if not reminder_settings.send_interview_feedback_reminder:
+	# DFP fix no settings or '0' as value
+	if not len(reminder_settings) or not int(reminder_settings.send_interview_feedback_reminder):
 		return
 
 	interview_feedback_template = frappe.get_doc('Email Template', reminder_settings.feedback_reminder_notification_template)
