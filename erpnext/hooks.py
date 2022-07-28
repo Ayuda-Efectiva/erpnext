@@ -613,6 +613,7 @@ accounting_dimension_doctypes = [
 	"Shipping Rule",
 	"Landed Cost Item",
 	"Asset Value Adjustment",
+	"Asset Repair",
 	"Loyalty Program",
 	"Fee Schedule",
 	"Fee Structure",
