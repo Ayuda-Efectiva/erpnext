@@ -1367,7 +1367,7 @@
    "width": "50px"
   },
   {
-   "depends_on": "eval:doc.is_subcontracted",
+   "depends_on": "eval:doc.update_stock && doc.is_subcontracted==\"Yes\"",
    "fieldname": "supplier_warehouse",
    "fieldtype": "Link",
    "label": "Supplier Warehouse",
@@ -1420,14 +1420,6 @@
    "read_only": 1
   },
   {
-   "default": "0",
-   "fieldname": "is_old_subcontracting_flow",
-   "fieldtype": "Check",
-   "hidden": 1,
-   "label": "Is Old Subcontracting Flow",
-   "read_only": 1
-  },
-  {
    "fieldname": "tax_withheld_vouchers_section",
    "fieldtype": "Section Break",
    "label": "Tax Withheld Vouchers"
@@ -1444,7 +1436,7 @@
  "idx": 204,
  "is_submittable": 1,
  "links": [],
- "modified": "2022-09-16 17:45:25.345996",
+ "modified": "2022-09-13 23:39:54.525037",
  "modified_by": "Administrator",
  "module": "Accounts",
  "name": "Purchase Invoice",
