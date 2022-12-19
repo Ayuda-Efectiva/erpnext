@@ -454,12 +454,10 @@ after_migrate = ["erpnext.setup.install.update_select_perm_after_install"]
 scheduler_events = {
 	"cron": {
 		"0/5 * * * *": [
-			# DFP not needed cron
-			# "erpnext.manufacturing.doctype.bom_update_log.bom_update_log.resume_bom_cost_update_jobs",
+			"erpnext.manufacturing.doctype.bom_update_log.bom_update_log.resume_bom_cost_update_jobs",
 		],
 		"0/30 * * * *": [
-			# DFP not needed cron
-			# "erpnext.utilities.doctype.video.video.update_youtube_data",
+			"erpnext.utilities.doctype.video.video.update_youtube_data",
 		],
 		# Hourly but offset by 30 minutes
 		"30 * * * *": [
@@ -467,18 +465,14 @@ scheduler_events = {
 		],
 		# Daily but offset by 45 minutes
 		"45 0 * * *": [
-			# DFP not needed cron
-			# "erpnext.stock.reorder_item.reorder_item",
+			"erpnext.stock.reorder_item.reorder_item",
 		],
 	},
 	"all": [
 		"erpnext.projects.doctype.project.project.project_status_update_reminder",
-		# DFP not needed cron
-		# "erpnext.healthcare.doctype.patient_appointment.patient_appointment.send_appointment_reminder",
-		# DFP not needed cron
-		# "erpnext.hr.doctype.interview.interview.send_interview_reminder",
-		# DFP not needed cron
-		# "erpnext.crm.doctype.social_media_post.social_media_post.process_scheduled_social_media_posts",
+		"erpnext.healthcare.doctype.patient_appointment.patient_appointment.send_appointment_reminder",
+		"erpnext.hr.doctype.interview.interview.send_interview_reminder",
+		"erpnext.crm.doctype.social_media_post.social_media_post.process_scheduled_social_media_posts",
 	],
 	"hourly": [
 		"erpnext.hr.doctype.daily_work_summary_group.daily_work_summary_group.trigger_emails",
@@ -496,46 +490,32 @@ scheduler_events = {
 	],
 	"daily": [
 		"erpnext.support.doctype.issue.issue.auto_close_tickets",
-		"erpnext.stock.doctype.stock_entry.stock_entry.audit_incorrect_valuation_entries",
 		"erpnext.crm.doctype.opportunity.opportunity.auto_close_opportunity",
 		"erpnext.controllers.accounts_controller.update_invoice_status",
 		"erpnext.accounts.doctype.fiscal_year.fiscal_year.auto_create_fiscal_year",
-		# DFP not needed cron
-		# "erpnext.hr.doctype.employee.employee_reminders.send_work_anniversary_reminders",
-		# DFP not needed cron
-		# "erpnext.hr.doctype.employee.employee_reminders.send_birthday_reminders",
+		"erpnext.hr.doctype.employee.employee_reminders.send_work_anniversary_reminders",
+		"erpnext.hr.doctype.employee.employee_reminders.send_birthday_reminders",
 		"erpnext.projects.doctype.task.task.set_tasks_as_overdue",
-		# DFP not needed cron
-		# "erpnext.assets.doctype.asset.depreciation.post_depreciation_entries",
+		"erpnext.assets.doctype.asset.depreciation.post_depreciation_entries",
 		"erpnext.hr.doctype.daily_work_summary_group.daily_work_summary_group.send_summary",
-		# DFP not needed cron
-		# "erpnext.stock.doctype.serial_no.serial_no.update_maintenance_status",
-		# DFP not needed cron
-		# "erpnext.buying.doctype.supplier_scorecard.supplier_scorecard.refresh_scorecards",
+		"erpnext.stock.doctype.serial_no.serial_no.update_maintenance_status",
+		"erpnext.buying.doctype.supplier_scorecard.supplier_scorecard.refresh_scorecards",
 		"erpnext.setup.doctype.company.company.cache_companies_monthly_sales_history",
-		# DFP not needed cron
-		# "erpnext.assets.doctype.asset.asset.update_maintenance_status",
-		# DFP not needed cron
-		# "erpnext.assets.doctype.asset.asset.make_post_gl_entry",
+		"erpnext.assets.doctype.asset.asset.update_maintenance_status",
+		"erpnext.assets.doctype.asset.asset.make_post_gl_entry",
 		"erpnext.crm.doctype.contract.contract.update_status_for_contracts",
 		"erpnext.projects.doctype.project.project.update_project_sales_billing",
 		"erpnext.projects.doctype.project.project.send_project_status_email_to_users",
-		# DFP not needed cron
-		# "erpnext.quality_management.doctype.quality_review.quality_review.review",
+		"erpnext.quality_management.doctype.quality_review.quality_review.review",
 		"erpnext.support.doctype.service_level_agreement.service_level_agreement.check_agreement_status",
 		"erpnext.crm.doctype.email_campaign.email_campaign.send_email_to_leads_or_contacts",
 		"erpnext.crm.doctype.email_campaign.email_campaign.set_email_campaign_status",
-		# DFP not needed cron
-		# "erpnext.selling.doctype.quotation.quotation.set_expired_status",
-		# DFP not needed cron
-		# "erpnext.healthcare.doctype.patient_appointment.patient_appointment.update_appointment_status",
-		# DFP not needed cron
-		# "erpnext.buying.doctype.supplier_quotation.supplier_quotation.set_expired_status",
+		"erpnext.selling.doctype.quotation.quotation.set_expired_status",
+		"erpnext.healthcare.doctype.patient_appointment.patient_appointment.update_appointment_status",
+		"erpnext.buying.doctype.supplier_quotation.supplier_quotation.set_expired_status",
 		"erpnext.accounts.doctype.process_statement_of_accounts.process_statement_of_accounts.send_auto_email",
-		# DFP not needed cron
-		# "erpnext.non_profit.doctype.membership.membership.set_expired_status",
-		# DFP not needed cron
-		# "erpnext.hr.doctype.interview.interview.send_daily_feedback_reminder",
+		"erpnext.non_profit.doctype.membership.membership.set_expired_status",
+		"erpnext.hr.doctype.interview.interview.send_daily_feedback_reminder",
 	],
 	"daily_long": [
 		"erpnext.setup.doctype.email_digest.email_digest.send",
@@ -543,18 +523,17 @@ scheduler_events = {
 		"erpnext.hr.doctype.leave_ledger_entry.leave_ledger_entry.process_expired_allocation",
 		"erpnext.hr.utils.generate_leave_encashment",
 		"erpnext.hr.utils.allocate_earned_leaves",
-		# DFP not needed cron
-		# "erpnext.loan_management.doctype.process_loan_security_shortfall.process_loan_security_shortfall.create_process_loan_security_shortfall",
-		# DFP not needed cron
-		# "erpnext.loan_management.doctype.process_loan_interest_accrual.process_loan_interest_accrual.process_loan_interest_accrual_for_term_loans",
+		"erpnext.loan_management.doctype.process_loan_security_shortfall.process_loan_security_shortfall.create_process_loan_security_shortfall",
+		"erpnext.loan_management.doctype.process_loan_interest_accrual.process_loan_interest_accrual.process_loan_interest_accrual_for_term_loans",
 		"erpnext.crm.doctype.lead.lead.daily_open_lead",
+		"erpnext.crm.utils.open_leads_opportunities_based_on_todays_event",
+		"erpnext.stock.doctype.stock_entry.stock_entry.audit_incorrect_valuation_entries",
 	],
 	"weekly": ["erpnext.hr.doctype.employee.employee_reminders.send_reminders_in_advance_weekly"],
 	"monthly": ["erpnext.hr.doctype.employee.employee_reminders.send_reminders_in_advance_monthly"],
 	"monthly_long": [
 		"erpnext.accounts.deferred_revenue.process_deferred_accounting",
-		# DFP not needed cron
-		# "erpnext.loan_management.doctype.process_loan_interest_accrual.process_loan_interest_accrual.process_loan_interest_accrual_for_demand_loans",
+		"erpnext.loan_management.doctype.process_loan_interest_accrual.process_loan_interest_accrual.process_loan_interest_accrual_for_demand_loans",
 	],
 }
 
