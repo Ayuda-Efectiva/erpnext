@@ -190,7 +190,7 @@ class PaymentReconciliation(Document):
 			)
 			.where(Criterion.all(conditions))
 			.groupby(gl.against_voucher)
-			.having(qb.Field("amount") > 0)
+			.having(having_clause)
 		)
 		dr_cr_notes = query.run(as_dict=True)
 		return dr_cr_notes
