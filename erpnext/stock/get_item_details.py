@@ -1185,6 +1185,7 @@ def get_bin_details(item_code, warehouse, company=None, include_child_warehouses
 
 	if company:
 		bin_details["company_total_stock"] = get_company_total_stock(item_code, company)
+
 	return bin_details
 
 

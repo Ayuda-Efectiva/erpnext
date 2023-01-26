@@ -62,7 +62,16 @@ class CourseSchedulingTool(Document):
 		"""Validates all mandatory fields"""
 		if not days:
 			frappe.throw(_("Please select at least one day to schedule the course."))
-		fields = ['course', 'room', 'instructor', 'from_time', 'to_time', 'course_start_date', 'course_end_date']
+
+		fields = [
+			"course",
+			"room",
+			"instructor",
+			"from_time",
+			"to_time",
+			"course_start_date",
+			"course_end_date",
+		]
 		for d in fields:
 			if not self.get(d):
 				frappe.throw(_("{0} is mandatory").format(self.meta.get_label(d)))
@@ -74,7 +83,8 @@ class CourseSchedulingTool(Document):
 
 	def delete_course_schedule(self, rescheduled, reschedule_errors, days):
 		"""Delete all course schedule within the Date range and specified filters"""
-		schedules = frappe.get_list("Course Schedule",
+		schedules = frappe.get_list(
+			"Course Schedule",
 			fields=["name", "schedule_date"],
 			filters=[
 				["student_group", "=", self.student_group],
